@@ -19,13 +19,14 @@ public class Initializer {
         WebDriver driver = new ChromeDriver();
 
         // And now use this to visit Google
-        driver.get("http://www.catolicasc.org.br/");
+        driver.get("http://www.catolicasc.org.br/jaragua-do-sul/");
         // Alternatively the same thing can be done like this
         // driver.navigate().to("http://www.google.com");
 
         // Find the text input element by its name
-        WebElement element = driver.findElement(By.className("joi"));
-        element.click();
+        WebElement completeName = driver.findElement(By.id("nome"));
+        completeName.sendKeys("teste batata");
+
         System.out.println("Page title is: " + driver.getTitle());
 
         // Google's search is rendered dynamically with JavaScript.
