@@ -1,10 +1,7 @@
 //package br.org.catolicasc.test;
 package org.openqa.selenium.example;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.NoSuchElementException;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedCondition;
@@ -12,10 +9,10 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class Initializer{
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
 
         // Configura o caminho para o driver desejado
-        String pathToDriver = "C:\\Users\\esdra\\Downloads\\chromedriver.exe";
+        String pathToDriver = "C:\\Users\\martin.ruediger\\Downloads\\chromedriver.exe";
 
         // Configura o driver a ser usado, no caso do google chrome
         System.setProperty("webdriver.chrome.driver", pathToDriver);
@@ -92,12 +89,19 @@ public class Initializer{
         String callbackText = callback.getText();
 
         if (callbackText.equals("Seus dados foram enviados!")) {
-            System.out.println("Os dados foram enviados com sucesso!");
+
+            JavascriptExecutor js = (JavascriptExecutor) driver;
+
+            js.executeScript("alert('Selenium = Os dados foram enviados com sucesso!!')");
+
         } else {
             throw new java.lang.RuntimeException("Erro ao finalizar formulário.");
         }
 
+        Thread.sleep(5000);
+
         // Fecha o drivers
         driver.quit();
+        System.out.println("Teste realizado com sucesso, sem nenhum erro");
     }
 }
