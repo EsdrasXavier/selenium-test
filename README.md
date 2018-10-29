@@ -14,3 +14,8 @@ String pathToDriver = "Caminho para o seu driver";
 
 # Rodando
 Após baixar e configurar as dependências basta rodar o programa que ele irá fazer um teste de envio de formulário no site e retornar se foi possível enviar ou não.
+
+**Desenvolvedores**
+- Martin Ruediger
+- Altieri Ricardo Dalagnollo
+- Esdras Xavier
